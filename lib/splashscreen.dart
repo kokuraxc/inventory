@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:inventory/overview.dart';
+import 'package:inventory/assets.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
@@ -8,8 +8,8 @@ class SplashScreen extends StatelessWidget {
     // redirect to overview screen
     Future.delayed(
         Duration(seconds: 3),
-        () => Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => OverviewScreen())));
+        () => Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => AssetsScreen())));
 
     return Material(
       child: Container(

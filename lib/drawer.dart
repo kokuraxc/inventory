@@ -10,10 +10,33 @@ class InventoryDrawer extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
-              decoration: BoxDecoration(color: Colors.orange),
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      stops: [
+                    0.0,
+                    0.3,
+                    0.7,
+                    1.0,
+                  ],
+                      colors: [
+                    Colors.green,
+                    Colors.blue,
+                    Colors.orange,
+                    Colors.pink
+                  ])),
               child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text('SMBA-Inventory')),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'SMBA Inventory',
+                  style: TextStyle(
+                    fontSize: 30,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
             ),
             ListTile(
               title: Text('Assets'),
