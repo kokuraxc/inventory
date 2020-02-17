@@ -11,7 +11,7 @@ class _RelationshipScreenState extends State<RelationshipScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Assets"),
+        title: Text("Input -> Output Relationship"),
       ),
       body: Center(
         child: Padding(

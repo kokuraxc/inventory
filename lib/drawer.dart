@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:inventory/assets.dart';
+import 'package:inventory/messages.dart';
 import 'package:inventory/relationship.dart';
 
 class InventoryDrawer extends StatelessWidget {
@@ -60,7 +61,12 @@ class InventoryDrawer extends StatelessWidget {
             ),
             ListTile(
               title: Text('Messages'),
-              onTap: () {},
+              onTap: () => Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => MessagesScreen(),
+                ),
+              ),
             ),
           ],
         ),

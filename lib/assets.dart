@@ -39,7 +39,7 @@ class _AssetTableState extends State<AssetTable> {
     AssetItem(2, imagePath: 'images/30213.png', name: '30213'),
     AssetItem(1, imagePath: 'images/input_shaft.png', name: 'Input Shaft'),
     AssetItem(14, imagePath: 'images/30205.png', name: '30205'),
-    AssetItem(5, imagePath: 'images/30204.png', name: '30204'),
+    AssetItem(5, imagePath: 'images/32204.png', name: '32204'),
     AssetItem(1,
         imagePath: 'images/transfer_shaft.png', name: 'Transfer Shaft'),
   ];
