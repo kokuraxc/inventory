@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:inventory/assets.dart';
+import 'package:inventory/relationship.dart';
 
 class InventoryDrawer extends StatelessWidget {
   @override
@@ -40,11 +42,21 @@ class InventoryDrawer extends StatelessWidget {
             ),
             ListTile(
               title: Text('Assets'),
-              onTap: () {},
+              onTap: () => Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AssetsScreen(),
+                ),
+              ),
             ),
             ListTile(
               title: Text('Output/Input'),
-              onTap: () {},
+              onTap: () => Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => RelationshipScreen(),
+                ),
+              ),
             ),
             ListTile(
               title: Text('Messages'),
