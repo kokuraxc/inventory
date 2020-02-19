@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:inventory/drawer.dart';
+import 'package:inventory/asset_details.dart';
 
 class AssetsScreen extends StatefulWidget {
   @override
@@ -32,19 +33,23 @@ class AssetTable extends StatefulWidget {
 }
 
 class _AssetTableState extends State<AssetTable> {
-  var assets = [
-    AssetItem(2, imagePath: 'images/output_shaft.png', name: 'Output Shaft'),
-    AssetItem(2, imagePath: 'images/output_gear.png', name: 'Output Gear'),
-    AssetItem(3, imagePath: 'images/nut.png', name: 'Nut'),
-    AssetItem(2, imagePath: 'images/30213.png', name: '30213'),
-    AssetItem(1, imagePath: 'images/input_shaft.png', name: 'Input Shaft'),
-    AssetItem(14, imagePath: 'images/30205.png', name: '30205'),
-    AssetItem(5, imagePath: 'images/32204.png', name: '32204'),
-    AssetItem(1,
-        imagePath: 'images/transfer_shaft.png', name: 'Transfer Shaft'),
-  ];
   @override
   Widget build(BuildContext context) {
+    var assets = [
+      AssetItem(2, context,
+          imagePath: 'images/output_shaft.png', name: 'Output Shaft'),
+      AssetItem(2, context,
+          imagePath: 'images/output_gear.png', name: 'Output Gear'),
+      AssetItem(3, context, imagePath: 'images/nut.png', name: 'Nut'),
+      AssetItem(2, context, imagePath: 'images/30213.png', name: '30213'),
+      AssetItem(1, context,
+          imagePath: 'images/input_shaft.png', name: 'Input Shaft'),
+      AssetItem(14, context, imagePath: 'images/30205.png', name: '30205'),
+      AssetItem(5, context, imagePath: 'images/32204.png', name: '32204'),
+      AssetItem(1, context,
+          imagePath: 'images/transfer_shaft.png', name: 'Transfer Shaft'),
+    ];
+
     return SingleChildScrollView(
       child: Table(
         border: TableBorder(
@@ -61,30 +66,50 @@ class _AssetTableState extends State<AssetTable> {
 class AssetItem {
   final String imagePath;
   final String name;
+  BuildContext context;
   int quantity = 0;
-  AssetItem(this.quantity, {this.imagePath, this.name});
+  AssetItem(this.quantity, this.context, {this.imagePath, this.name});
   TableRow getRow() {
     return TableRow(
       children: [
-        SizedBox(
+        GestureDetector(
+          onTap: () => Scaffold.of(context).showSnackBar(SnackBar(
+            content: Text('1 Output Shaft is required for PO in CRM app.'),
+            action: SnackBarAction(
+              label: 'Dismiss',
+              onPressed: () {
+                // Some code to undo the change.
+              },
+            ),
+          )),
+          child: SizedBox(
+              height: 100,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.asset(
+                  imagePath,
+                  fit: BoxFit.scaleDown,
+                ),
+              )),
+        ),
+        GestureDetector(
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => AssetDetailsScreen(),
+            ),
+          ),
+          child: SizedBox(
             height: 100,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Image.asset(
-                imagePath,
-                fit: BoxFit.scaleDown,
-              ),
-            )),
-        SizedBox(
-          height: 100,
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 8.0),
-              child: Text(
-                name,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text(
+                  name,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
