@@ -10,7 +10,7 @@ This app will be used to manage and track the items in the depository. It can al
 
 This app was developed in **Visual Studio Code** with **Flutter**. 
 
-### Prerequisites
+### Installing
 
 - Download the Flutter SDK
 - For Android version development
