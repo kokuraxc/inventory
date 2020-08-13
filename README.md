@@ -1,16 +1,35 @@
-# inventory
+# Inventory App
 
-A new Flutter project.
+This is one of the four apps in the **Smart Manufacturing Business Apps (S.M.B.A)** project. 
+
+This app will be used to manage and track the items in the depository. It can also be integrated with the **CRM & Sales App**. In this case, it will check whether there are enough number of required components in store, and send notifications if not when a *purchase order* is placed for certain products.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This app was developed in **Visual Studio Code** with **Flutter**. 
 
-A few resources to get you started if this is your first Flutter project:
+### Prerequisites
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- Download the Flutter SDK
+- For Android version development
+    - Install the Android SDK
+    - Set up your Android device or Android emulator
+- For iOS version development
+    - Install Xcode
+    - Set up the iOS simulator
+- Install Visual Studio Code
+    - Install the Flutter and Dart plugins
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Build the app
+
+1. Locate the VS Code status bar (the blue bar at the bottom of the window):
+![](images/select_device.png)
+2. Select a device from the Device Selector area.
+    - If no device is available and you want to use a device simulator, click **No Devices** and launch a simulator.
+3. Invoke **Run > Start** Debugging or press F5.
+4. Wait for the app to launch — progress is printed in the Debug Console view.
+
+## Built With
+
+* [Flutter](https://flutter.dev) - The UI toolkit used
+* [Dart](https://dart.dev/) - The programming language used
