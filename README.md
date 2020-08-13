@@ -4,6 +4,8 @@ This is one of the four apps in the **Smart Manufacturing Business Apps (S.M.B.A
 
 This app will be used to manage and track the items in the depository. It can also be integrated with the **CRM & Sales App**. In this case, it will check whether there are enough number of required components in store, and send notifications if not when a *purchase order* is placed for certain products.
 
+![](images/app_first_screen.png)
+
 ## Getting Started
 
 This app was developed in **Visual Studio Code** with **Flutter**. 
